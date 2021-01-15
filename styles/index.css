@@ -1,7 +1,8 @@
 body {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     /* max-width: 980px; */
     margin: auto;
+    box-sizing: border-box;
 }
 
 .font-h2 {
@@ -26,35 +27,37 @@ header {
 #burger-menu {
     display: none;
 }
+
 header nav {
-        display: flex;
-        margin: 0;
-        padding: 40px;
-        justify-content: space-between;
-    }
+    display: flex;
+    margin: 0;
+    padding: 40px;
+    justify-content: space-between;
+}
 
-        .burger-icon {
-            display: none;
-        }
+.burger-icon {
+    display: none;
+}
 
-    header .menu {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        text-align: center;
-        /* flex: 1; */
-        font-size: 20px;
-        font-weight: bold;
-        width: 30%;
-        line-height: 150%;
-        transition-property: transform;
-        transition-duration: 1.5s;
-    }
+header .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    /* flex: 1; */
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    line-height: 150%;
+    transition-property: transform;
+    transition-duration: 1.5s;
+}
 
-    header .menu a:hover {
-        transform: scale(1.1);
-    }
+header .menu a:hover {
+    transform: scale(1.1);
+}
+
 /* nav {
     margin: 0;
     padding: 40px;
@@ -80,22 +83,35 @@ a {
 
 @media(max-width: 610px) {
     header .menu {
-    display: none;
-}
+        display: none;
+    }
 
-.burger-icon {
-    font-size: 2rem;
-    display: flex;
-}
+    .burger-icon {
+        font-size: 2rem;
+        display: block;
+    }
 
+    #burger-menu {
+        display: none;
+    }
 
+    header input:checked~.menu {
+        display: flex;
+
+    }
+
+    header .menu {
+        flex-direction: column;
+    }
 
     /*End media min 610 610  */
 }
-header input:checked ~ .menu {
+
+header nav {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
+
 .header-title {
     font-weight: bold;
     font-size: 56px;
@@ -186,16 +202,14 @@ footer {
     background-image: url(../img/footer-opacity.png);
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footer-header {
     text-align: center;
-}
 
-#contacts {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .footer-a {
@@ -204,7 +218,7 @@ footer {
     line-height: 1.875;
     border: 3px solid blue;
     color: black !important;
-    width: 70%;
+    width: 80%;
     border-radius: 25px;
     text-align: center;
     transition-property: border;
@@ -213,7 +227,11 @@ footer {
 
 .data-icons {
     margin-top: 40px;
-    margin-right: 200px;
+    /* margin-right: 200px; */
+}
+
+.height {
+    height: 500px;
 }
 
 .footer-a:hover {
@@ -247,7 +265,7 @@ footer {
 .icons-row {
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .fa-viber {
@@ -259,18 +277,19 @@ footer {
 .fa-envelope {
     font-size: 30px;
     display: block;
-    margin: 20px 0 25px ;
+    margin: 20px 0 25px;
 }
 
 .viber-color {
     color: black;
 }
 
-.card-footer {
-    margin: 25px;
-    padding: 10px;
-    width: 80%;
-    height: 100%;
+.footer-card {
+    /* margin: 25px; */
+    /* padding: 50px; */
+    border: 5px solid blue;
+    /* width: 100vh; */
+    /* height: 100%; */
 }
 
 .booking-row {
@@ -279,11 +298,11 @@ footer {
 }
 
 .booking-p {
-    font-size: 25px;
+    font-size: 30px;
     margin-left: 20px;
 }
 
-@media (max-width: 43em) {
+/* @media (max-width: 610px) {
     header {
          margin: auto;
         width: 99%;
@@ -322,13 +341,14 @@ footer {
         width: 90%;
     }
 
-} 
- @media  (max-width: 62em) {
-     .header-title {
+}  */
+@media (max-width: 62em) {
+    .header-title {
         font-size: 30px;
         position: absolute;
         top: 250px;
     }
+
     /* header .menu {
         flex: 1;
         margin-left: 60px;
@@ -337,26 +357,26 @@ footer {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         place-items: center;
-    }   
+    }
+
     .response {
         display: grid;
         grid-template-rows: 1fr 1fr;
         place-items: center;
     }
+
     .second-response {
         display: none;
     }
-     #contacts {
+
+    .line-height {
+        line-height: 1.7rem;
+    }
+
+    footer {
         display: grid;
         grid-template-rows: 1fr 1fr;
         place-items: center;
     }
-    .data-icons {
-        margin-right: 200px;
-    }
-    .data {
-        margin-left: 250px;
-    }
-   
-}
 
+}
