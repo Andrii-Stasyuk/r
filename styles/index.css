@@ -24,10 +24,6 @@ header {
     /* width: 1000px; */
 }
 
-#burger-menu {
-    display: none;
-}
-
 header nav {
     display: flex;
     margin: 0;
@@ -35,16 +31,20 @@ header nav {
     justify-content: space-between;
 }
 
+
+
 .burger-icon {
     display: none;
 }
 
-header .menu {
+
+
+header #menu {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    text-align: center;
+    /* text-align: center; */
     /* flex: 1; */
     font-size: 20px;
     font-weight: bold;
@@ -54,7 +54,7 @@ header .menu {
     transition-duration: 1.5s;
 }
 
-header .menu a:hover {
+header #menu a:hover {
     transform: scale(1.1);
 }
 
@@ -66,7 +66,7 @@ header .menu a:hover {
     justify-content: space-between;
 } */
 
-.menu {
+#menu {
     font-size: 20px;
     font-weight: bold;
     line-height: 150%;
@@ -82,27 +82,35 @@ a {
 }
 
 @media(max-width: 610px) {
-    header .menu {
+    header #menu {
         display: none;
     }
 
     .burger-icon {
         font-size: 2rem;
         display: block;
+        cursor: pointer;
     }
 
-    #burger-menu {
-        display: none;
+    header nav {
+        display: block !important;
     }
-
-    header input:checked~.menu {
+    .responseve-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 150%
+    }
+    /* header input:checked~#menu {
         display: flex;
 
-    }
+    } */
 
-    header .menu {
+    /* header #menu {
         flex-direction: column;
-    }
+    } */
+    
 
     /*End media min 610 610  */
 }
@@ -182,8 +190,33 @@ header nav {
 
 .slider {
     margin-bottom: 50px;
+    position: relative; 
+     /* max-width: 880px; */
+     margin: auto;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    display: flex;
+     align-items: center;
+    justify-content: center;
+}
+.next {
+    margin-left: 100px;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curr-img {
+    width: 60%;
+    height: 50%;
+    object-fit: cover;
+}
 .around-header {
     text-align: center;
 }
@@ -315,7 +348,7 @@ footer {
     h1 {
         line-height: 70px;
     }
-    header .menu {
+    header #menu {
         display: flex;
         flex: 1;
         margin-left: 60px;
@@ -348,8 +381,9 @@ footer {
         position: absolute;
         top: 250px;
     }
-
-    /* header .menu {
+    
+    
+    /* header #menu {
         flex: 1;
         margin-left: 60px;
     } */
