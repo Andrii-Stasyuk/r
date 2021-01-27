@@ -19,6 +19,7 @@ body {
     padding: 10px;
 }
 
+
 header {
     margin: auto;
     background-image: url("../img/house-forest.png");
@@ -136,7 +137,15 @@ header nav {
     height: 350px;
     box-shadow: 0 0 10px;
     max-width: 550px;
+    transition-property: transform;
+    transition-duration: 1s;
 }
+
+
+.card:hover {
+    transform: scale(1.1);
+}
+
 
 .response {
     display: flex;
